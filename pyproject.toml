@@ -1,0 +1,10 @@
+[project]
+name = "knowledge-model-finetuning"
+version = "0.1.0"
+description = "面向知识库证据问答的开源模型微调初始化与实现方案"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = []
+
+[tool.uv]
+package = false
