@@ -8,6 +8,8 @@
 
 详细技术栈、架构、需求覆盖、实施顺序、统一契约与未来验收见 [实现方案](docs/implementation-plan.md)。
 
+用户云端学习训练的确定方案见[云端训练与数据集方案](docs/cloud-training-plan.md)：`Qwen3-4B-Instruct-2507` + 单卡RTX4090 24GB + SFT/QLoRA；推荐16vCPU、64GB RAM、150GB可用持久盘。首轮使用自建`KB-Support-CN-v1`，来自Python3.11/Kubernetes官方中文正文，目标2,000条，train/validation/test目标1,600/200/200。原10,000条改作后续扩展项；数据与模型质量仍须实测，不降低发布门槛。
+
 ## 运行与验证
 
 Python 3.11.x、uv；核心工具仅用标准库，`dependencies=[]`，锁文件保留。`export`额外要求当前解释器已安装Transformers，并提供现有本地Qwen3 tokenizer；本阶段未安装或锁定训练栈。其他机器替换为本地已装3.11解释器，不运行会隐式安装的命令。
@@ -74,7 +76,7 @@ python -B -m knowledge_model_finetuning export data/samples.jsonl data/partition
 
 `_token_counter`只加载本地模型文件，`local_files_only=True`、`trust_remote_code=False`，明确启用离线模式。读取实际`input_ids`长度，不把BatchEncoding字段数当token数。核心Python函数允许注入计数器；调用方负责保证它确为真实tokenizer，测试用固定计数回调只验证预算拒绝路径。
 
-当前代码包括模板、语料分区、数据导出、评估、发布及CLI；`configs/logging.ini`为实际日志配置，`tests/`覆盖必要消费边界。没有空训练入口、模型服务或真实`.env`。后续训练使用既定Qwen3-4B、ms-swift SFT/QLoRA及原精度合并再量化流程，仍受方案质量门槛及本机6GB限制；不把基座运行算最终联调成功。
+当前代码包括模板、语料分区、数据导出、评估、发布及CLI；`configs/logging.ini`为实际日志配置，`tests/`覆盖必要消费边界。没有空训练入口、模型服务或真实`.env`。正式SFT/QLoRA训练放在用户云服务器；本机6GB用于资料准备、平台和后续GGUF演示。沿用既定Qwen3-4B、原精度合并再量化及质量门槛，不能把基座运行算最终联调成功。
 
 原始需求为工作区只读资料`real/2.9.md`与`real/4.1.md`。数据采集、训练栈/权重下载、Linux GPU环境、人工审核及最终训练部署尚需推进；下载遵守工作区单独授权规则。
 
