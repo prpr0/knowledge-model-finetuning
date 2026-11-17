@@ -1,0 +1,2 @@
+# 测试结果固定LF，避免Windows检出改写原始输出的文件字节。
+/results/cloud-run-20261117/* text eol=lf

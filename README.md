@@ -2,7 +2,7 @@
 
 面向中文技术支持与操作知识库的证据问答模型微调项目，当前提供可执行的离线语料分区、正式样例质检导出、对照评估与发布文件校验工具。
 
-**尚无正式训练数据、已审核评估结论或微调模型。** 工具不下载文档、模型或依赖，不执行训练，不代替人工核验；单元测试的临时数据和小文件不构成模型成果。正式训练、推理和平台最终生成联调仍需完成。
+**正式发布仍要求真实人工审核、质量门禁及平台最终联调。** 离线单元测试不构成模型成果；云端自动学习实验及其运行产物与正式发布分开记录，不把自动质检当作人工批准。
 
 本项目对应 `real/4.1.md` 的术语格式、忠实回答、多片段整合、引用和拒答能力需求，为独立项目 `knowledge-base-platform` 交付生成模型；平台的权限、检索与会话仍由平台实现。 两项目通过 OpenAI 兼容服务契约协作，不复制代码或导入兄弟目录。微调模型发布前，基座对照实验不计为最终联调成功。
 
@@ -10,9 +10,30 @@
 
 用户云端学习训练的确定方案见[云端训练与数据集方案](docs/cloud-training-plan.md)：`Qwen3-4B-Instruct-2507` + 单卡RTX4090 24GB + SFT/QLoRA；推荐16vCPU、64GB RAM、150GB可用持久盘。首轮使用自建`KB-Support-CN-v1`，来自Python3.11/Kubernetes官方中文正文，目标2,000条，train/validation/test目标1,600/200/200。原10,000条改作后续扩展项；数据与模型质量仍须实测，不降低发布门槛。
 
+## 云端自动学习实验
+
+`scripts/`提供真实官方语料采集、基座推理、QLoRA冒烟及原精度合并。学习实验采用`automated_learning_experiment`，所有人工审核状态保持`pending`，不调用正式`export`绕过人工门禁。
+
+- `prepare_experiment.py collect/prepare`保存官方HTML、许可、版本证据并先按完整文档分区；Python限定3.11，Kubernetes逐页核验官方版本快照。
+- `prepare_extractive.py build`读取`generation-plan.jsonl`、`partitioned.jsonl`、`chunks.jsonl`及本地tokenizer，构造`extractive-plan.jsonl`和`question-requests.jsonl`。基座仅出题，参考答案由已核验原文摘录或受控拒答派生；代码不把这些参考答案冒称为模型自由生成。
+- `runtime.py generate`批量保存真实输出与token/哈希；`prepare_extractive.py assemble`保留原始出题输出并组装样例，再用`prepare_experiment.py finalize`做2000条完整质检及测试集锁定。失败项用`prepare_extractive.py repair`有限重生成，不静默缩量。
+- 对`test-requests.jsonl`先生成基座结果，再运行`runtime.py smoke`检查真实梯度、assistant-only掩码和保存重载。正式训练显式传入train/validation并按validation loss选模型，test不参与训练；随后`runtime.py merge`从原始BF16基座合并。
+- `verify_deployment.py`实际核验Swift的普通及SSE OpenAI接口和usage，启动前检查端口空闲、就绪后校验模型名，默认回收整个自有进程组并确认端口释放；最终模型可用`--keep-running`保留已验证的回环服务。`download_model.py`按锁定官方revision续传并核验官方LFS SHA-256。
+
+`prepare_experiment.py compare`输出同一固定测试集的逐题对照和自动代理指标，包括引用编号、字面关键点、启发式拒答及批次分摊耗时。代理指标不等同人工证据支持、语义正确率或独立单请求延迟，不产生正式发布通过结论。摘录能逐字追溯，不代表问题和关键点完整性已经人工审核。具体环境、命令和结果以运行目录为准；本轮云端沿用已实测支持RTX5090的Python3.12.3及PyTorch2.12.1/CUDA13.0，核心离线工具仍兼容Python3.11。
+
+### Git归档范围
+
+本仓库保留微调工作流代码、测试代码和[本轮对比报告](results/cloud-run-20261117/comparison.md)。两次原始模型输出分别为[基线结果](results/cloud-run-20261117/baseline.jsonl)和[微调结果](results/cloud-run-20261117/finetuned.jsonl)，另有[逐题对比](results/cloud-run-20261117/comparison.jsonl)与[统计汇总](results/cloud-run-20261117/summary.json)。
+
+Git不包含模型权重、adapter、tokenizer、训练参数文件、训练数据、测试输入、原始文档、环境快照或压缩备份；这些本机文件由`.gitignore`排除。逐题对比只保留样本ID、分类、双侧输出与代理指标，移除了问题、证据、参考答案和关键点原文。运行代码时需自行提供模型、数据和训练参数；`configs/logging.ini`仅用于程序日志。
+
+本轮200题的输入token哈希一致，结果属于未经人工审核的自动代理评估。旧基座服务子进程曾驻留，已回收并修复进程组管理；耗时只作为批次运行记录，不作为资源隔离条件下的性能结论。
+
+
 ## 运行与验证
 
-Python 3.11.x、uv；核心工具仅用标准库，`dependencies=[]`，锁文件保留。`export`额外要求当前解释器已安装Transformers，并提供现有本地Qwen3 tokenizer；本阶段未安装或锁定训练栈。其他机器替换为本地已装3.11解释器，不运行会隐式安装的命令。
+Python 3.11.x、uv；核心工具仅用标准库，`dependencies=[]`，锁文件保留。`export`额外要求Transformers及现有本地Qwen3 tokenizer；云端训练依赖在独立环境安装，实际版本保存到实验的`environment-freeze.txt`。其他机器可替换为本地已装3.11解释器。
 
 ```powershell
 uv --offline --no-python-downloads venv --python D:/uv/python/cpython-3.11.16-windows-x86_64-none/python.exe .venv
@@ -76,9 +97,9 @@ python -B -m knowledge_model_finetuning export data/samples.jsonl data/partition
 
 `_token_counter`只加载本地模型文件，`local_files_only=True`、`trust_remote_code=False`，明确启用离线模式。读取实际`input_ids`长度，不把BatchEncoding字段数当token数。核心Python函数允许注入计数器；调用方负责保证它确为真实tokenizer，测试用固定计数回调只验证预算拒绝路径。
 
-当前代码包括模板、语料分区、数据导出、评估、发布及CLI；`configs/logging.ini`为实际日志配置，`tests/`覆盖必要消费边界。没有空训练入口、模型服务或真实`.env`。正式SFT/QLoRA训练放在用户云服务器；本机6GB用于资料准备、平台和后续GGUF演示。沿用既定Qwen3-4B、原精度合并再量化及质量门槛，不能把基座运行算最终联调成功。
+核心包包括模板、语料分区、正式数据导出、人工评估、发布及CLI，云端学习脚本位于`scripts/`；`configs/logging.ini`集中配置日志。模型服务复用Swift，不保存真实`.env`或凭证。正式SFT/QLoRA在用户云服务器运行，本机用于资料、结果和后续GGUF演示。沿用Qwen3-4B、原精度合并再量化及正式质量门槛，基座或未经人工审核的学习实验均不等于平台最终验收。
 
-原始需求为工作区只读资料`real/2.9.md`与`real/4.1.md`。数据采集、训练栈/权重下载、Linux GPU环境、人工审核及最终训练部署尚需推进；下载遵守工作区单独授权规则。
+原始需求为工作区只读资料`real/2.9.md`与`real/4.1.md`。正式人工审核、量化发布及平台最终联调仍需按方案验收；云端学习执行记录保存实际采集、权重、训练和推理证据。外部下载须在用户授权范围内执行。
 
 ## 评估记录与报告
 
