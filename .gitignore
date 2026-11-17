@@ -18,3 +18,35 @@ artifacts/
 outputs/
 models/
 checkpoints/
+
+# 模型权重、训练参数和压缩备份不进入Git。
+*.safetensors
+*.gguf
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+checkpoint-*/
+tokenizer*.json
+tokenizer.model
+special_tokens_map.json
+adapter_config.json
+training_args*
+training-args*
+trainer_state.json
+trainer-state*.json
+/configs/*-training.json
+
+# 结果只放行本轮两次输出、逐题对比及汇总报告。
+/results/*
+!/results/cloud-run-20261117/
+/results/cloud-run-20261117/*
+!/results/cloud-run-20261117/baseline.jsonl
+!/results/cloud-run-20261117/finetuned.jsonl
+!/results/cloud-run-20261117/comparison.jsonl
+!/results/cloud-run-20261117/summary.json
+!/results/cloud-run-20261117/comparison.md

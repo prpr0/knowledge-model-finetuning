@@ -1,0 +1,1247 @@
+{
+  "baseline": {
+    "all_no_citation": {
+      "denominator": 200,
+      "numerator": 4,
+      "value": 0.02
+    },
+    "answerable_no_citation": {
+      "denominator": 150,
+      "numerator": 0,
+      "value": 0.0
+    },
+    "citation_id_validity": {
+      "denominator": 711,
+      "numerator": 681,
+      "value": 0.9578059071729957
+    },
+    "count": 200,
+    "elapsed_seconds": {
+      "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+      "known": 200,
+      "mean_per_sample_allocation": 2.1225626080669464,
+      "total": 424.51252161338925,
+      "unknown": 0
+    },
+    "failed": 0,
+    "generated_tokens": {
+      "known": 200,
+      "mean": 374.1,
+      "total": 74820,
+      "unknown": 0
+    },
+    "generated_tokens_per_second": 176.2492180811096,
+    "heuristic_false_refusal": {
+      "denominator": 150,
+      "numerator": 23,
+      "value": 0.15333333333333332
+    },
+    "heuristic_refusal_recall": {
+      "denominator": 50,
+      "numerator": 41,
+      "value": 0.82
+    },
+    "literal_keypoint_coverage": {
+      "denominator": 200,
+      "numerator": 98,
+      "value": 0.49
+    },
+    "prompt_tokens": {
+      "known": 200,
+      "mean": 746.21,
+      "total": 149242,
+      "unknown": 0
+    },
+    "proxy_failures": 123
+  },
+  "count": 200,
+  "created_at": "2026-11-17T03:21:11.473112+00:00",
+  "experiment_mode": "automated_learning_experiment",
+  "finetuned": {
+    "all_no_citation": {
+      "denominator": 200,
+      "numerator": 15,
+      "value": 0.075
+    },
+    "answerable_no_citation": {
+      "denominator": 150,
+      "numerator": 0,
+      "value": 0.0
+    },
+    "citation_id_validity": {
+      "denominator": 569,
+      "numerator": 569,
+      "value": 1.0
+    },
+    "count": 200,
+    "elapsed_seconds": {
+      "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+      "known": 200,
+      "mean_per_sample_allocation": 0.4733225997816771,
+      "total": 94.66451995633543,
+      "unknown": 0
+    },
+    "failed": 0,
+    "generated_tokens": {
+      "known": 200,
+      "mean": 77.735,
+      "total": 15547,
+      "unknown": 0
+    },
+    "generated_tokens_per_second": 164.23259746282076,
+    "heuristic_false_refusal": {
+      "denominator": 150,
+      "numerator": 0,
+      "value": 0.0
+    },
+    "heuristic_refusal_recall": {
+      "denominator": 50,
+      "numerator": 49,
+      "value": 0.98
+    },
+    "literal_keypoint_coverage": {
+      "denominator": 200,
+      "numerator": 187,
+      "value": 0.935
+    },
+    "prompt_tokens": {
+      "known": 200,
+      "mean": 746.21,
+      "total": 149242,
+      "unknown": 0
+    },
+    "proxy_failures": 14
+  },
+  "formal_release_passed": false,
+  "groups": {
+    "refusal_type": {
+      "conflict": {
+        "baseline": {
+          "all_no_citation": {
+            "denominator": 10,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "answerable_no_citation": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "citation_id_validity": {
+            "denominator": 72,
+            "numerator": 72,
+            "value": 1.0
+          },
+          "count": 10,
+          "elapsed_seconds": {
+            "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+            "known": 10,
+            "mean_per_sample_allocation": 2.353567954385653,
+            "total": 23.53567954385653,
+            "unknown": 0
+          },
+          "failed": 0,
+          "generated_tokens": {
+            "known": 10,
+            "mean": 638.9,
+            "total": 6389,
+            "unknown": 0
+          },
+          "generated_tokens_per_second": 271.46018826839895,
+          "heuristic_false_refusal": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "heuristic_refusal_recall": {
+            "denominator": 10,
+            "numerator": 3,
+            "value": 0.3
+          },
+          "literal_keypoint_coverage": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "prompt_tokens": {
+            "known": 10,
+            "mean": 763.1,
+            "total": 7631,
+            "unknown": 0
+          },
+          "proxy_failures": 7
+        },
+        "finetuned": {
+          "all_no_citation": {
+            "denominator": 10,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "answerable_no_citation": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "citation_id_validity": {
+            "denominator": 20,
+            "numerator": 20,
+            "value": 1.0
+          },
+          "count": 10,
+          "elapsed_seconds": {
+            "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+            "known": 10,
+            "mean_per_sample_allocation": 0.2027659403393045,
+            "total": 2.027659403393045,
+            "unknown": 0
+          },
+          "failed": 0,
+          "generated_tokens": {
+            "known": 10,
+            "mean": 48.1,
+            "total": 481,
+            "unknown": 0
+          },
+          "generated_tokens_per_second": 237.21932746451606,
+          "heuristic_false_refusal": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "heuristic_refusal_recall": {
+            "denominator": 10,
+            "numerator": 10,
+            "value": 1.0
+          },
+          "literal_keypoint_coverage": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "prompt_tokens": {
+            "known": 10,
+            "mean": 763.1,
+            "total": 7631,
+            "unknown": 0
+          },
+          "proxy_failures": 0
+        }
+      },
+      "irrelevant": {
+        "baseline": {
+          "all_no_citation": {
+            "denominator": 15,
+            "numerator": 2,
+            "value": 0.13333333333333333
+          },
+          "answerable_no_citation": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "citation_id_validity": {
+            "denominator": 26,
+            "numerator": 26,
+            "value": 1.0
+          },
+          "count": 15,
+          "elapsed_seconds": {
+            "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+            "known": 15,
+            "mean_per_sample_allocation": 1.1360518926909815,
+            "total": 17.04077839036472,
+            "unknown": 0
+          },
+          "failed": 0,
+          "generated_tokens": {
+            "known": 15,
+            "mean": 249.06666666666666,
+            "total": 3736,
+            "unknown": 0
+          },
+          "generated_tokens_per_second": 219.23881142145638,
+          "heuristic_false_refusal": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "heuristic_refusal_recall": {
+            "denominator": 15,
+            "numerator": 14,
+            "value": 0.9333333333333333
+          },
+          "literal_keypoint_coverage": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "prompt_tokens": {
+            "known": 15,
+            "mean": 649.2,
+            "total": 9738,
+            "unknown": 0
+          },
+          "proxy_failures": 1
+        },
+        "finetuned": {
+          "all_no_citation": {
+            "denominator": 15,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "answerable_no_citation": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "citation_id_validity": {
+            "denominator": 19,
+            "numerator": 19,
+            "value": 1.0
+          },
+          "count": 15,
+          "elapsed_seconds": {
+            "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+            "known": 15,
+            "mean_per_sample_allocation": 0.25961276950935525,
+            "total": 3.8941915426403284,
+            "unknown": 0
+          },
+          "failed": 0,
+          "generated_tokens": {
+            "known": 15,
+            "mean": 30.666666666666668,
+            "total": 460,
+            "unknown": 0
+          },
+          "generated_tokens_per_second": 118.12464665980764,
+          "heuristic_false_refusal": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "heuristic_refusal_recall": {
+            "denominator": 15,
+            "numerator": 14,
+            "value": 0.9333333333333333
+          },
+          "literal_keypoint_coverage": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "prompt_tokens": {
+            "known": 15,
+            "mean": 649.2,
+            "total": 9738,
+            "unknown": 0
+          },
+          "proxy_failures": 1
+        }
+      },
+      "missing_conditions": {
+        "baseline": {
+          "all_no_citation": {
+            "denominator": 10,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "answerable_no_citation": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "citation_id_validity": {
+            "denominator": 34,
+            "numerator": 34,
+            "value": 1.0
+          },
+          "count": 10,
+          "elapsed_seconds": {
+            "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+            "known": 10,
+            "mean_per_sample_allocation": 1.9169780012685806,
+            "total": 19.169780012685806,
+            "unknown": 0
+          },
+          "failed": 0,
+          "generated_tokens": {
+            "known": 10,
+            "mean": 407.0,
+            "total": 4070,
+            "unknown": 0
+          },
+          "generated_tokens_per_second": 212.31333887538796,
+          "heuristic_false_refusal": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "heuristic_refusal_recall": {
+            "denominator": 10,
+            "numerator": 10,
+            "value": 1.0
+          },
+          "literal_keypoint_coverage": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "prompt_tokens": {
+            "known": 10,
+            "mean": 669.5,
+            "total": 6695,
+            "unknown": 0
+          },
+          "proxy_failures": 0
+        },
+        "finetuned": {
+          "all_no_citation": {
+            "denominator": 10,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "answerable_no_citation": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "citation_id_validity": {
+            "denominator": 10,
+            "numerator": 10,
+            "value": 1.0
+          },
+          "count": 10,
+          "elapsed_seconds": {
+            "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+            "known": 10,
+            "mean_per_sample_allocation": 0.14543590296525508,
+            "total": 1.4543590296525508,
+            "unknown": 0
+          },
+          "failed": 0,
+          "generated_tokens": {
+            "known": 10,
+            "mean": 33.0,
+            "total": 330,
+            "unknown": 0
+          },
+          "generated_tokens_per_second": 226.90408164126958,
+          "heuristic_false_refusal": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "heuristic_refusal_recall": {
+            "denominator": 10,
+            "numerator": 10,
+            "value": 1.0
+          },
+          "literal_keypoint_coverage": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "prompt_tokens": {
+            "known": 10,
+            "mean": 669.5,
+            "total": 6695,
+            "unknown": 0
+          },
+          "proxy_failures": 0
+        }
+      },
+      "no_evidence": {
+        "baseline": {
+          "all_no_citation": {
+            "denominator": 15,
+            "numerator": 2,
+            "value": 0.13333333333333333
+          },
+          "answerable_no_citation": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "citation_id_validity": {
+            "denominator": 15,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "count": 15,
+          "elapsed_seconds": {
+            "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+            "known": 15,
+            "mean_per_sample_allocation": 0.8922151119913906,
+            "total": 13.383226679870859,
+            "unknown": 0
+          },
+          "failed": 0,
+          "generated_tokens": {
+            "known": 15,
+            "mean": 96.6,
+            "total": 1449,
+            "unknown": 0
+          },
+          "generated_tokens_per_second": 108.26985409874132,
+          "heuristic_false_refusal": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "heuristic_refusal_recall": {
+            "denominator": 15,
+            "numerator": 14,
+            "value": 0.9333333333333333
+          },
+          "literal_keypoint_coverage": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "prompt_tokens": {
+            "known": 15,
+            "mean": 94.86666666666666,
+            "total": 1423,
+            "unknown": 0
+          },
+          "proxy_failures": 13
+        },
+        "finetuned": {
+          "all_no_citation": {
+            "denominator": 15,
+            "numerator": 15,
+            "value": 1.0
+          },
+          "answerable_no_citation": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "citation_id_validity": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "count": 15,
+          "elapsed_seconds": {
+            "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+            "known": 15,
+            "mean_per_sample_allocation": 0.2725349918473512,
+            "total": 4.088024877710268,
+            "unknown": 0
+          },
+          "failed": 0,
+          "generated_tokens": {
+            "known": 15,
+            "mean": 17.0,
+            "total": 255,
+            "unknown": 0
+          },
+          "generated_tokens_per_second": 62.37731120237882,
+          "heuristic_false_refusal": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "heuristic_refusal_recall": {
+            "denominator": 15,
+            "numerator": 15,
+            "value": 1.0
+          },
+          "literal_keypoint_coverage": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "prompt_tokens": {
+            "known": 15,
+            "mean": 94.86666666666666,
+            "total": 1423,
+            "unknown": 0
+          },
+          "proxy_failures": 0
+        }
+      }
+    },
+    "task_type": {
+      "citation": {
+        "baseline": {
+          "all_no_citation": {
+            "denominator": 40,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "answerable_no_citation": {
+            "denominator": 40,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "citation_id_validity": {
+            "denominator": 95,
+            "numerator": 90,
+            "value": 0.9473684210526315
+          },
+          "count": 40,
+          "elapsed_seconds": {
+            "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+            "known": 40,
+            "mean_per_sample_allocation": 1.4587806345836725,
+            "total": 58.3512253833469,
+            "unknown": 0
+          },
+          "failed": 0,
+          "generated_tokens": {
+            "known": 40,
+            "mean": 245.975,
+            "total": 9839,
+            "unknown": 0
+          },
+          "generated_tokens_per_second": 168.61685312281364,
+          "heuristic_false_refusal": {
+            "denominator": 40,
+            "numerator": 1,
+            "value": 0.025
+          },
+          "heuristic_refusal_recall": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "literal_keypoint_coverage": {
+            "denominator": 40,
+            "numerator": 20,
+            "value": 0.5
+          },
+          "prompt_tokens": {
+            "known": 40,
+            "mean": 639.4,
+            "total": 25576,
+            "unknown": 0
+          },
+          "proxy_failures": 22
+        },
+        "finetuned": {
+          "all_no_citation": {
+            "denominator": 40,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "answerable_no_citation": {
+            "denominator": 40,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "citation_id_validity": {
+            "denominator": 107,
+            "numerator": 107,
+            "value": 1.0
+          },
+          "count": 40,
+          "elapsed_seconds": {
+            "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+            "known": 40,
+            "mean_per_sample_allocation": 0.40919640681822783,
+            "total": 16.367856272729114,
+            "unknown": 0
+          },
+          "failed": 0,
+          "generated_tokens": {
+            "known": 40,
+            "mean": 74.175,
+            "total": 2967,
+            "unknown": 0
+          },
+          "generated_tokens_per_second": 181.26992017539837,
+          "heuristic_false_refusal": {
+            "denominator": 40,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "heuristic_refusal_recall": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "literal_keypoint_coverage": {
+            "denominator": 40,
+            "numerator": 39,
+            "value": 0.975
+          },
+          "prompt_tokens": {
+            "known": 40,
+            "mean": 639.4,
+            "total": 25576,
+            "unknown": 0
+          },
+          "proxy_failures": 1
+        }
+      },
+      "multi": {
+        "baseline": {
+          "all_no_citation": {
+            "denominator": 50,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "answerable_no_citation": {
+            "denominator": 50,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "citation_id_validity": {
+            "denominator": 289,
+            "numerator": 286,
+            "value": 0.9896193771626297
+          },
+          "count": 50,
+          "elapsed_seconds": {
+            "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+            "known": 50,
+            "mean_per_sample_allocation": 3.325617646588944,
+            "total": 166.2808823294472,
+            "unknown": 0
+          },
+          "failed": 0,
+          "generated_tokens": {
+            "known": 50,
+            "mean": 642.5,
+            "total": 32125,
+            "unknown": 0
+          },
+          "generated_tokens_per_second": 193.1971947102838,
+          "heuristic_false_refusal": {
+            "denominator": 50,
+            "numerator": 18,
+            "value": 0.36
+          },
+          "heuristic_refusal_recall": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "literal_keypoint_coverage": {
+            "denominator": 100,
+            "numerator": 48,
+            "value": 0.48
+          },
+          "prompt_tokens": {
+            "known": 50,
+            "mean": 1193.34,
+            "total": 59667,
+            "unknown": 0
+          },
+          "proxy_failures": 44
+        },
+        "finetuned": {
+          "all_no_citation": {
+            "denominator": 50,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "answerable_no_citation": {
+            "denominator": 50,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "citation_id_validity": {
+            "denominator": 251,
+            "numerator": 251,
+            "value": 1.0
+          },
+          "count": 50,
+          "elapsed_seconds": {
+            "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+            "known": 50,
+            "mean_per_sample_allocation": 0.8178698777966201,
+            "total": 40.89349388983101,
+            "unknown": 0
+          },
+          "failed": 0,
+          "generated_tokens": {
+            "known": 50,
+            "mean": 132.54,
+            "total": 6627,
+            "unknown": 0
+          },
+          "generated_tokens_per_second": 162.05511854412464,
+          "heuristic_false_refusal": {
+            "denominator": 50,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "heuristic_refusal_recall": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "literal_keypoint_coverage": {
+            "denominator": 100,
+            "numerator": 91,
+            "value": 0.91
+          },
+          "prompt_tokens": {
+            "known": 50,
+            "mean": 1193.34,
+            "total": 59667,
+            "unknown": 0
+          },
+          "proxy_failures": 9
+        }
+      },
+      "refusal": {
+        "baseline": {
+          "all_no_citation": {
+            "denominator": 50,
+            "numerator": 4,
+            "value": 0.08
+          },
+          "answerable_no_citation": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "citation_id_validity": {
+            "denominator": 147,
+            "numerator": 132,
+            "value": 0.8979591836734694
+          },
+          "count": 50,
+          "elapsed_seconds": {
+            "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+            "known": 50,
+            "mean_per_sample_allocation": 1.4625892925355584,
+            "total": 73.12946462677792,
+            "unknown": 0
+          },
+          "failed": 0,
+          "generated_tokens": {
+            "known": 50,
+            "mean": 312.88,
+            "total": 15644,
+            "unknown": 0
+          },
+          "generated_tokens_per_second": 213.9219817872373,
+          "heuristic_false_refusal": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "heuristic_refusal_recall": {
+            "denominator": 50,
+            "numerator": 41,
+            "value": 0.82
+          },
+          "literal_keypoint_coverage": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "prompt_tokens": {
+            "known": 50,
+            "mean": 509.74,
+            "total": 25487,
+            "unknown": 0
+          },
+          "proxy_failures": 21
+        },
+        "finetuned": {
+          "all_no_citation": {
+            "denominator": 50,
+            "numerator": 15,
+            "value": 0.3
+          },
+          "answerable_no_citation": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "citation_id_validity": {
+            "denominator": 49,
+            "numerator": 49,
+            "value": 1.0
+          },
+          "count": 50,
+          "elapsed_seconds": {
+            "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+            "known": 50,
+            "mean_per_sample_allocation": 0.22928469706792384,
+            "total": 11.464234853396192,
+            "unknown": 0
+          },
+          "failed": 0,
+          "generated_tokens": {
+            "known": 50,
+            "mean": 30.52,
+            "total": 1526,
+            "unknown": 0
+          },
+          "generated_tokens_per_second": 133.10962480395577,
+          "heuristic_false_refusal": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "heuristic_refusal_recall": {
+            "denominator": 50,
+            "numerator": 49,
+            "value": 0.98
+          },
+          "literal_keypoint_coverage": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "prompt_tokens": {
+            "known": 50,
+            "mean": 509.74,
+            "total": 25487,
+            "unknown": 0
+          },
+          "proxy_failures": 1
+        }
+      },
+      "single": {
+        "baseline": {
+          "all_no_citation": {
+            "denominator": 60,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "answerable_no_citation": {
+            "denominator": 60,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "citation_id_validity": {
+            "denominator": 180,
+            "numerator": 173,
+            "value": 0.9611111111111111
+          },
+          "count": 60,
+          "elapsed_seconds": {
+            "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+            "known": 60,
+            "mean_per_sample_allocation": 2.1125158212302875,
+            "total": 126.75094927381724,
+            "unknown": 0
+          },
+          "failed": 0,
+          "generated_tokens": {
+            "known": 60,
+            "mean": 286.8666666666667,
+            "total": 17212,
+            "unknown": 0
+          },
+          "generated_tokens_per_second": 135.79385478855312,
+          "heuristic_false_refusal": {
+            "denominator": 60,
+            "numerator": 4,
+            "value": 0.06666666666666667
+          },
+          "heuristic_refusal_recall": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "literal_keypoint_coverage": {
+            "denominator": 60,
+            "numerator": 30,
+            "value": 0.5
+          },
+          "prompt_tokens": {
+            "known": 60,
+            "mean": 641.8666666666667,
+            "total": 38512,
+            "unknown": 0
+          },
+          "proxy_failures": 36
+        },
+        "finetuned": {
+          "all_no_citation": {
+            "denominator": 60,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "answerable_no_citation": {
+            "denominator": 60,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "citation_id_validity": {
+            "denominator": 162,
+            "numerator": 162,
+            "value": 1.0
+          },
+          "count": 60,
+          "elapsed_seconds": {
+            "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+            "known": 60,
+            "mean_per_sample_allocation": 0.4323155823396519,
+            "total": 25.938934940379113,
+            "unknown": 0
+          },
+          "failed": 0,
+          "generated_tokens": {
+            "known": 60,
+            "mean": 73.78333333333333,
+            "total": 4427,
+            "unknown": 0
+          },
+          "generated_tokens_per_second": 170.67007609123124,
+          "heuristic_false_refusal": {
+            "denominator": 60,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "heuristic_refusal_recall": {
+            "denominator": 0,
+            "numerator": 0,
+            "value": null
+          },
+          "literal_keypoint_coverage": {
+            "denominator": 60,
+            "numerator": 57,
+            "value": 0.95
+          },
+          "prompt_tokens": {
+            "known": 60,
+            "mean": 641.8666666666667,
+            "total": 38512,
+            "unknown": 0
+          },
+          "proxy_failures": 3
+        }
+      }
+    },
+    "topic": {
+      "kubernetes": {
+        "baseline": {
+          "all_no_citation": {
+            "denominator": 80,
+            "numerator": 1,
+            "value": 0.0125
+          },
+          "answerable_no_citation": {
+            "denominator": 60,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "citation_id_validity": {
+            "denominator": 317,
+            "numerator": 311,
+            "value": 0.9810725552050473
+          },
+          "count": 80,
+          "elapsed_seconds": {
+            "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+            "known": 80,
+            "mean_per_sample_allocation": 2.1213499868375947,
+            "total": 169.70799894700758,
+            "unknown": 0
+          },
+          "failed": 0,
+          "generated_tokens": {
+            "known": 80,
+            "mean": 431.3375,
+            "total": 34507,
+            "unknown": 0
+          },
+          "generated_tokens_per_second": 203.33160613587245,
+          "heuristic_false_refusal": {
+            "denominator": 60,
+            "numerator": 9,
+            "value": 0.15
+          },
+          "heuristic_refusal_recall": {
+            "denominator": 20,
+            "numerator": 17,
+            "value": 0.85
+          },
+          "literal_keypoint_coverage": {
+            "denominator": 80,
+            "numerator": 34,
+            "value": 0.425
+          },
+          "prompt_tokens": {
+            "known": 80,
+            "mean": 750.325,
+            "total": 60026,
+            "unknown": 0
+          },
+          "proxy_failures": 50
+        },
+        "finetuned": {
+          "all_no_citation": {
+            "denominator": 80,
+            "numerator": 6,
+            "value": 0.075
+          },
+          "answerable_no_citation": {
+            "denominator": 60,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "citation_id_validity": {
+            "denominator": 304,
+            "numerator": 304,
+            "value": 1.0
+          },
+          "count": 80,
+          "elapsed_seconds": {
+            "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+            "known": 80,
+            "mean_per_sample_allocation": 0.4677283654891653,
+            "total": 37.418269239133224,
+            "unknown": 0
+          },
+          "failed": 0,
+          "generated_tokens": {
+            "known": 80,
+            "mean": 92.0375,
+            "total": 7363,
+            "unknown": 0
+          },
+          "generated_tokens_per_second": 196.7755363815582,
+          "heuristic_false_refusal": {
+            "denominator": 60,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "heuristic_refusal_recall": {
+            "denominator": 20,
+            "numerator": 19,
+            "value": 0.95
+          },
+          "literal_keypoint_coverage": {
+            "denominator": 80,
+            "numerator": 71,
+            "value": 0.8875
+          },
+          "prompt_tokens": {
+            "known": 80,
+            "mean": 750.325,
+            "total": 60026,
+            "unknown": 0
+          },
+          "proxy_failures": 10
+        }
+      },
+      "python": {
+        "baseline": {
+          "all_no_citation": {
+            "denominator": 120,
+            "numerator": 3,
+            "value": 0.025
+          },
+          "answerable_no_citation": {
+            "denominator": 90,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "citation_id_validity": {
+            "denominator": 394,
+            "numerator": 370,
+            "value": 0.9390862944162437
+          },
+          "count": 120,
+          "elapsed_seconds": {
+            "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+            "known": 120,
+            "mean_per_sample_allocation": 2.1233710222198474,
+            "total": 254.80452266638167,
+            "unknown": 0
+          },
+          "failed": 0,
+          "generated_tokens": {
+            "known": 120,
+            "mean": 335.94166666666666,
+            "total": 40313,
+            "unknown": 0
+          },
+          "generated_tokens_per_second": 158.21147748143486,
+          "heuristic_false_refusal": {
+            "denominator": 90,
+            "numerator": 14,
+            "value": 0.15555555555555556
+          },
+          "heuristic_refusal_recall": {
+            "denominator": 30,
+            "numerator": 24,
+            "value": 0.8
+          },
+          "literal_keypoint_coverage": {
+            "denominator": 120,
+            "numerator": 64,
+            "value": 0.5333333333333333
+          },
+          "prompt_tokens": {
+            "known": 120,
+            "mean": 743.4666666666667,
+            "total": 89216,
+            "unknown": 0
+          },
+          "proxy_failures": 73
+        },
+        "finetuned": {
+          "all_no_citation": {
+            "denominator": 120,
+            "numerator": 9,
+            "value": 0.075
+          },
+          "answerable_no_citation": {
+            "denominator": 90,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "citation_id_validity": {
+            "denominator": 265,
+            "numerator": 265,
+            "value": 1.0
+          },
+          "count": 120,
+          "elapsed_seconds": {
+            "definition": "sum(整批elapsed_seconds/真实batch_size)；分类结果是批耗时分摊，均值不是独立请求延迟",
+            "known": 120,
+            "mean_per_sample_allocation": 0.47705208931001836,
+            "total": 57.2462507172022,
+            "unknown": 0
+          },
+          "failed": 0,
+          "generated_tokens": {
+            "known": 120,
+            "mean": 68.2,
+            "total": 8184,
+            "unknown": 0
+          },
+          "generated_tokens_per_second": 142.9613275536445,
+          "heuristic_false_refusal": {
+            "denominator": 90,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "heuristic_refusal_recall": {
+            "denominator": 30,
+            "numerator": 30,
+            "value": 1.0
+          },
+          "literal_keypoint_coverage": {
+            "denominator": 120,
+            "numerator": 116,
+            "value": 0.9666666666666667
+          },
+          "prompt_tokens": {
+            "known": 120,
+            "mean": 743.4666666666667,
+            "total": 89216,
+            "unknown": 0
+          },
+          "proxy_failures": 4
+        }
+      }
+    }
+  },
+  "human_review": "pending",
+  "limitations": "仅自动代理：引用编号有效不等于证据支持；关键点仅字面覆盖；拒答为启发式；未经人工审核，不是发布门禁报告。整批elapsed_seconds按真实batch_size分摊，分组耗时是分摊值而非独立请求延迟；缺失样本会使对应总耗时不完整。 旧基座API子进程曾驻留，已回收；保留耗时不作为资源隔离条件下的性能结论。",
+  "test_hash": "bea1e7ae408e19dfee54b2ceb90741ab6e5837dc62e0bbcf8df666f670424097"
+}
